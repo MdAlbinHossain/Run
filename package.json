@@ -1,0 +1,151 @@
+{
+	"name": "run",
+	"version": "1.23.4",
+	"publisher": "AlbinBD",
+	"displayName": "Run++",
+	"description": "Run C/C++ programs with time limit and input/output redirections.",
+	"repository": "https://github.com/MdAlbinHossain/Run",
+	"engines": {
+		"vscode": "^1.10.0"
+	},
+	"categories": [
+		"Debuggers",
+		"Testing",
+		"Other"
+	],
+	"keywords": [
+		"Competitve",
+		"Contest",
+		"Compile",
+		"Run",
+		"C",
+		"C++"
+	],
+	"icon": "logo.png",
+	"activationEvents": [
+		"workspaceContains:*.c",
+		"workspaceContains:*.cpp",
+		"onCommand:run.stop",
+		"onCommand:run.start"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "run.start",
+				"title": "Run++",
+				"icon": "$(play)"
+			},
+			{
+				"command": "run.stop",
+				"title": "Stop++",
+				"icon": "$(debug-stop)"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceLangId == c || resourceLangId == cpp",
+					"command": "run.start",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "resourceLangId == c || resourceLangId == cpp",
+					"command": "run.start",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == c || resourceLangId == cpp",
+					"command": "run.stop",
+					"group": "navigation"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "resourceLangId == c || resourceLangId == cpp",
+					"command": "run.start",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == c || resourceLangId == cpp",
+					"command": "run.stop",
+					"group": "navigation"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "run.start",
+				"key": "alt+b",
+				"when": "resourceLangId == c || resourceLangId == cpp"
+			},
+			{
+				"command": "run.stop",
+				"key": "alt+n"
+			}
+		],
+		"configuration": {
+			"title": "Run++",
+			"properties": {
+				"run.compiler": {
+					"type": "string",
+					"default": "g++",
+					"description": "g++ or full path of the compiler."
+				},
+				"run.compilerArgs": {
+					"type": "string",
+					"description": "e.g -O2 -std=c++20"
+				},
+				"run.timelimit": {
+					"type": "number",
+					"default": 1000,
+					"maximum": 300000,
+					"minimum": 100
+				},
+				"run.programArgs": {
+					"type": "string",
+					"default": ""
+				},
+				"run.inputFile": {
+					"type": "string",
+					"default": "",
+					"description": "Full path of the input file. e.g ${workspaceFolder}\\Input.txt"
+				},
+				"run.outputFile": {
+					"type": "string",
+					"default": "",
+					"description": "Full path of the output file. e.g ${workspaceFolder}\\Output.txt"
+				},
+				"run.outputFileNameSimilarToCodeFile": {
+					"type": "boolean",
+					"default": false
+				},
+				"run.compilerDirectory": {
+					"type": "string",
+					"default": "",
+					"description": "Full path of the Compiler bin Directory. e.g ${workspaceFolder}\\MinGW64\\bin. (Optional, if already added in environment varible path.)"
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "run-output",
+				"mimetypes": [
+					"text/x-code-output"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "run-output",
+				"scopeName": "run.output",
+				"path": "./output.tmLanguage"
+			}
+		]
+	},
+	"dependencies": {
+		"tree-kill": "^1.2.2"
+	}
+}
