@@ -7,6 +7,8 @@ No more hangups for infinite loops!
 This extension allows to run program in output channel. It also shows errors(if any) in output channel and how much time the program is taking to run.
 
 
+#### [Download from Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run)
+
 ## Features
 
 - Run C/C++ programs.
