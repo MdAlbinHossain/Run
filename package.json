@@ -1,6 +1,6 @@
 {
 	"name": "run",
-	"version": "1.23.45",
+	"version": "1.23.456",
 	"publisher": "AlbinBD",
 	"displayName": "Run++",
 	"description": "Run C/C++ programs with time limit and input/output redirections.",
