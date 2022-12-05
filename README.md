@@ -7,8 +7,6 @@ No more hangups for infinite loops!
 This extension allows to run program in output channel. It also shows errors(if any) in output channel and how much time the program is taking to run.
 
 
-#### [Download from Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run)
-
 ## Features
 
 - Run C/C++ programs.
@@ -16,6 +14,10 @@ This extension allows to run program in output channel. It also shows errors(if 
 - Stop program automatically after `timelimit`.
 - Press `Alt+B` to build and run in outputchannel with I/O redirections.
 - Press `Alt+N` to stop program manually.
+
+## Bonus Features
+
+- Works for Python and Java 11 or later!
 
 ## Requirements
 
@@ -40,4 +42,4 @@ This extension allows to run program in output channel. It also shows errors(if 
 
 ### [Write a review](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run&ssr=false#review-details)
 
-# *Happy Coding*
+# Happy Coding :)

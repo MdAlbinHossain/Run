@@ -1,6 +1,6 @@
 {
 	"name": "run",
-	"version": "1.23.4",
+	"version": "1.23.40",
 	"publisher": "AlbinBD",
 	"displayName": "Run++",
 	"description": "Run C/C++ programs with time limit and input/output redirections.",
@@ -25,6 +25,8 @@
 	"activationEvents": [
 		"workspaceContains:*.c",
 		"workspaceContains:*.cpp",
+		"workspaceContains:*.java",
+		"workspaceContains:*.python",
 		"onCommand:run.stop",
 		"onCommand:run.start"
 	],
@@ -45,31 +47,31 @@
 		"menus": {
 			"editor/title": [
 				{
-					"when": "resourceLangId == c || resourceLangId == cpp",
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java",
 					"command": "run.start",
 					"group": "navigation"
 				}
 			],
 			"editor/context": [
 				{
-					"when": "resourceLangId == c || resourceLangId == cpp",
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java",
 					"command": "run.start",
 					"group": "navigation"
 				},
 				{
-					"when": "resourceLangId == c || resourceLangId == cpp",
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java",
 					"command": "run.stop",
 					"group": "navigation"
 				}
 			],
 			"explorer/context": [
 				{
-					"when": "resourceLangId == c || resourceLangId == cpp",
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java",
 					"command": "run.start",
 					"group": "navigation"
 				},
 				{
-					"when": "resourceLangId == c || resourceLangId == cpp",
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java",
 					"command": "run.stop",
 					"group": "navigation"
 				}
@@ -79,7 +81,7 @@
 			{
 				"command": "run.start",
 				"key": "alt+b",
-				"when": "resourceLangId == c || resourceLangId == cpp"
+				"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == python || resourceLangId == java"
 			},
 			{
 				"command": "run.stop",
