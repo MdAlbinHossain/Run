@@ -1,5 +1,7 @@
 # Run++
 
+Pulished at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run)
+
 Run C/C++ programs with timelimit and input/output redirections focusing competitive programming.
 
 No more hangups for infinite loops!
