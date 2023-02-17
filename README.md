@@ -1,13 +1,12 @@
 # Run++
 
-Pulished at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run)
+Run C/C++, Java, and Python programs with timelimit and input/output redirections focusing competitive programming.
 
-Run C/C++ programs with timelimit and input/output redirections focusing competitive programming.
-
-No more hangups for infinite loops!
+No more freopen and hangups for infinite loops! Break automatically after timelimit.
 
 This extension allows to run program in output channel. It also shows errors(if any) in output channel and how much time the program is taking to run.
 
+## Pulished at [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run)
 
 ## Features
 
