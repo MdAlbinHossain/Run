@@ -1,4 +1,4 @@
-const { dirname } = require('path');
+const { dirname, join } = require('path');
 const { window, commands, workspace } = require('vscode');
 const treekill = require('tree-kill');
 const { spawn } = require('child_process');
@@ -22,7 +22,7 @@ function Run(executor) {
 	outputChannel.show(true);
 	outputChannel.appendLine('🟦 Running.....');
 	const sTime = Date.now();
-
+	console.log(srcFile)
 	runnerProcess = spawn("\"" + executor + "\"", [programArgs, runArgs, srcFile], { cwd: working_dir, shell: true });
 
 	const killer = setTimeout(() => {
@@ -55,7 +55,7 @@ function Run(executor) {
 
 	runnerProcess.stdout.on("data", (data) => { outputChannel.appendLine(data.toString()); });
 	runnerProcess.stderr.on("data", (data) => {
-		outputChannel.appendLine('Execute: ' + [executor, programArgs, runArgs].join(' '), srcFile);
+		outputChannel.appendLine('Execute: ' + [executor, programArgs, runArgs, srcFile].join(' '));
 		outputChannel.appendLine(data.toString());
 	});
 }
@@ -67,9 +67,10 @@ function buildAndRun() {
 
 	srcFile = activeEditor.document.fileName;
 	work_folder = workspace.workspaceFolders ? workspace.workspaceFolders[0].uri.fsPath : dirname(srcFile);
-	programFile = work_folder + '\\Program';
+	programFile = join(work_folder, 'Program');
 	configs = workspace.getConfiguration('run');
 	compiler = replacePlaceholder(configs.get('compiler'));
+	pythonPath = replacePlaceholder(configs.get('pythonPath'));
 	args = replacePlaceholder(configs.get('compilerArgs'));
 	timelimit = configs.get('timelimit');
 	ofnstcf = Boolean(configs.get('outputFileNameSimilarToCodeFile'));
@@ -94,7 +95,7 @@ function buildAndRun() {
 
 		if (activeEditor.document.languageId == 'java') { Run('java'); return; }
 
-		if (activeEditor.document.languageId == 'python') { Run('python'); return; }
+		if (activeEditor.document.languageId == 'python') { Run(pythonPath); return; }
 
 		outputChannel.appendLine(['🟪 Compiling...', compiler, "\"" + srcFile + "\"", args, '-o', "\"" + programFile + "\""].join(' '));
 

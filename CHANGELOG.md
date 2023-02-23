@@ -14,6 +14,6 @@ All notable changes to the "Run++" extension will be documented in this file.
 
 - Improvement and Bug Fix.
 
-## [1.23.45]
+## [2.0.0]
 
 - Python and Java Supported.

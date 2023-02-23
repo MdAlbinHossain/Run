@@ -1,6 +1,6 @@
 # Run++
 
-Run C/C++, Java, and Python programs with timelimit and input/output redirections focusing competitive programming.
+Run C/C++ programs with timelimit and input/output redirections focusing competitive programming.
 
 No more freopen and hangups for infinite loops! Break automatically after timelimit.
 
@@ -18,12 +18,13 @@ This extension allows to run program in output channel. It also shows errors(if 
 
 ## Bonus Features
 
-- Works for Python and Java 11 or later!
+- Works for Python and Java 11+ too!
 
 ## Requirements
 
 * Install mingw64 or other C/C++ compiler.
 * Make sure `g++` is available in `PATH` or setup compiler dirctory in settings.
+* Similar for Java/Python if you want to run Java/Python.
 
 ## Usage
 
@@ -43,4 +44,4 @@ This extension allows to run program in output channel. It also shows errors(if 
 
 ### [Write a review](https://marketplace.visualstudio.com/items?itemName=AlbinBD.run&ssr=false#review-details)
 
-# Happy Coding :)
+## Happy Coding :)

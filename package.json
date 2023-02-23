@@ -1,6 +1,6 @@
 {
 	"name": "run",
-	"version": "1.23.456",
+	"version": "2.0.1",
 	"publisher": "AlbinBD",
 	"displayName": "Run++",
 	"description": "Run C/C++ programs with time limit and input/output redirections.",
@@ -96,6 +96,11 @@
 					"default": "g++",
 					"description": "g++ or full path of the compiler."
 				},
+				"run.pythonPath": {
+					"type": "string",
+					"default": "python3",
+					"description": "python3 or full path of the python."
+				},
 				"run.compilerArgs": {
 					"type": "string",
 					"description": "e.g -O2 -std=c++20"
@@ -149,5 +154,6 @@
 	},
 	"dependencies": {
 		"tree-kill": "^1.2.2"
-	}
+	},
+	"license": "MIT"
 }
